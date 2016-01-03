@@ -2,7 +2,7 @@
 
 通过正则表达式采集[http://news.mydrivers.com/](http://news.mydrivers.com/ "mydrivers")的新闻数据
 
-该项目为`NewsCollection`的插件
+该项目为[NewsCollection](https://github.com/Jeffiy/NewsCollection.git "NewsCollection")的插件
 
 ### 操作手册
 
