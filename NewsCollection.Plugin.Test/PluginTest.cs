@@ -1,4 +1,5 @@
-﻿using NewsCollection.Plugin.CollectNewsByRegex;
+﻿using System;
+using NewsCollection.Plugin.CollectNewsByRegex;
 using Xunit;
 
 namespace NewsCollection.Plugin.Test
@@ -20,8 +21,8 @@ namespace NewsCollection.Plugin.Test
             _config.Keywords = string.Empty;
             _config.Save();
 
-            _collectMyDriverNews.GetNewContent("http://news.mydrivers.com/1/464/464111.htm");
-            Assert.True(_collectMyDriverNews.IsCollect);
+            _collectMyDriverNews.GetDriverNewsByDate(DateTime.Now);
+            Assert.True(_collectMyDriverNews.IsCollectOrNot);
         }
 
         [Fact]
@@ -31,7 +32,7 @@ namespace NewsCollection.Plugin.Test
             _config.Save();
 
             _collectMyDriverNews.GetNewContent("http://news.mydrivers.com/1/464/464111.htm");
-            Assert.True(_collectMyDriverNews.IsCollect);
+            Assert.True(_collectMyDriverNews.IsCollectOrNot);
         }
 
         [Fact]
@@ -41,7 +42,14 @@ namespace NewsCollection.Plugin.Test
             _config.Save();
 
             _collectMyDriverNews.GetNewContent("http://news.mydrivers.com/1/464/464111.htm");
-            Assert.True(!_collectMyDriverNews.IsCollect);
+            Assert.True(!_collectMyDriverNews.IsCollectOrNot);
+        }
+
+        [Fact]
+        public void TestGetPcNews()
+        {
+            _collectMyDriverNews.GetNewContent("http://news.mydrivers.com/1/459/459550.htm");
+            Assert.True(_collectMyDriverNews.IsCollectOrNot);
         }
     }
 }

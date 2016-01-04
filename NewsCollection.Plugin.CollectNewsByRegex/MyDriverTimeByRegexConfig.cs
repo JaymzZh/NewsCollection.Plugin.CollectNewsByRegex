@@ -5,7 +5,7 @@ using NewLife.Xml;
 namespace NewsCollection.Plugin.CollectNewsByRegex
 {
     [DisplayName("历史数据采集时间")]
-    [XmlConfigFile("Config/MyDriverTimeConfig.config")]
+    [XmlConfigFile("Config/MyDriverTimeByRegexConfig.config")]
     public class MyDriverTimeByRegexConfig : XmlConfig<MyDriverTimeByRegexConfig>
     {
         #region 属性
