@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Collect.cs" />
-    <Compile Include="CollectMyDriverNews.cs" />
+    <Compile Include="CollectMyDriverNewsByRegex.cs" />
     <Compile Include="MyDriverTimeByRegexConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

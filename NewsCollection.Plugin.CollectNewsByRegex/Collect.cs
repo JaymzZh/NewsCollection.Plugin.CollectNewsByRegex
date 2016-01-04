@@ -5,8 +5,8 @@ namespace NewsCollection.Plugin.CollectNewsByRegex
 {
     public class Collect : ICollect
     {
-        readonly CollectMyDriverNews _collectToday = new CollectMyDriverNews();
-        readonly CollectMyDriverNews _collectHistory = new CollectMyDriverNews();
+        private readonly CollectMyDriverNewsByRegex _collectToday = new CollectMyDriverNewsByRegex();
+        private readonly CollectMyDriverNewsByRegex _collectHistory = new CollectMyDriverNewsByRegex();
 
         public Collect()
         {

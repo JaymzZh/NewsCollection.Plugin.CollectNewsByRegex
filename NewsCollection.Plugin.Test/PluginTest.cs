@@ -6,12 +6,12 @@ namespace NewsCollection.Plugin.Test
 {
     public class PluginTest
     {
-        private readonly CollectMyDriverNews _collectMyDriverNews;
+        private readonly CollectMyDriverNewsByRegex _collectMyDriverNews;
         private readonly MyDriverTimeByRegexConfig _config;
 
         public PluginTest()
         {
-            _collectMyDriverNews = new CollectMyDriverNews();
+            _collectMyDriverNews = new CollectMyDriverNewsByRegex();
             _config = MyDriverTimeByRegexConfig.Current;
         }
 

@@ -10,7 +10,7 @@ using XCode;
 
 namespace NewsCollection.Plugin.CollectNewsByRegex
 {
-    public class CollectMyDriverNews
+    public class CollectMyDriverNewsByRegex
     {
         /// <summary>
         /// 用于判断任务结束没
@@ -289,7 +289,6 @@ namespace NewsCollection.Plugin.CollectNewsByRegex
 
         private static string GetPagedPcContent(string url, string result, string html)
         {
-            string matchContent;
             var content = new StringBuilder(result);
             var baseUrl = url.Substring(0, url.LastIndexOf('/'));//基础网址
             var currentUrl = url.Substring(url.LastIndexOf('/') + 1);//当前网址（不含基础网址）
@@ -302,7 +301,7 @@ namespace NewsCollection.Plugin.CollectNewsByRegex
 
                 html = HtmlHelper.GetWebSource($"{baseUrl}/{pageUrl}", Encoding.Default);
                 html = HtmlHelper.TrimOther(html);
-                matchContent = PcContentDivRegex.Match(html).Groups["content"].Value;
+                var matchContent = PcContentDivRegex.Match(html).Groups["content"].Value;
                 content.Append(PcContentRegex.Match(matchContent).Groups["content"].Value);
                 //延迟一定时间，避免IP被封
                 Thread.Sleep(600);
