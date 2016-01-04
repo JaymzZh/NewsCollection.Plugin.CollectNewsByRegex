@@ -107,13 +107,15 @@ namespace NewsCollection.Plugin.CollectNewsByRegex
         /// <summary>
         /// 测评内容正则匹配
         /// </summary>
-        private static readonly Regex PcContentRegex = new Regex(@"<div\sclass=""pc_dh"">.*?</div>
-(?<content><p.*?>.*</p>)", RegexOptions.IgnoreCase | RegexOptions.Multiline | RegexOptions.IgnorePatternWhitespace);
+        private static readonly Regex PcContentRegex =
+            new Regex(@"<div\sclass=""pc_dh"">.*?</div>(?<content><p.*?>.*</p>)",
+                RegexOptions.IgnoreCase | RegexOptions.Multiline | RegexOptions.IgnorePatternWhitespace);
 
         /// <summary>
         /// 测评内容页正则匹配
         /// </summary>
-        private static readonly Regex PcPageRegex = new Regex(@"<select\sname=""Split_Page"".*?>
+        private static readonly Regex PcPageRegex = new Regex(@"
+<select\sname=""Split_Page"".*?>
     (?<pageOptions>.*?)
 </select>",
             RegexOptions.IgnoreCase | RegexOptions.Multiline | RegexOptions.IgnorePatternWhitespace |
